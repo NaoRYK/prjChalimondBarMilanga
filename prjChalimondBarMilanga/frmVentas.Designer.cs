@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVentas));
             dgvDatos = new DataGridView();
             Comidas = new DataGridViewTextBoxColumn();
             BebidasSinAlcohol = new DataGridViewTextBoxColumn();
@@ -120,6 +121,7 @@
             Controls.Add(btnValidar);
             Controls.Add(dgvDatos);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmVentas";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Ventas";

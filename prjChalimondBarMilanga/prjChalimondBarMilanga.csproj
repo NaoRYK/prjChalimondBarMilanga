@@ -6,6 +6,11 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationIcon>alcohol_beverage_wine_glass_cup_drink_icon_266471.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="alcohol_beverage_wine_glass_cup_drink_icon_266471.ico" />
+  </ItemGroup>
 
 </Project>

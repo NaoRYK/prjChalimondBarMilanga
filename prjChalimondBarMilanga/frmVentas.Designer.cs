@@ -30,14 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVentas));
             dgvDatos = new DataGridView();
-            Comidas = new DataGridViewTextBoxColumn();
-            BebidasSinAlcohol = new DataGridViewTextBoxColumn();
-            BebidasConAlcohol = new DataGridViewTextBoxColumn();
-            Postres = new DataGridViewTextBoxColumn();
             btnValidar = new Button();
             btnMejorMozo = new Button();
             btnTotal = new Button();
             txtResultados = new TextBox();
+            Mozos = new DataGridViewTextBoxColumn();
+            Comidas = new DataGridViewTextBoxColumn();
+            BebidasSinAlcohol = new DataGridViewTextBoxColumn();
+            BebidasConAlcohol = new DataGridViewTextBoxColumn();
+            Postres = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dgvDatos).BeginInit();
             SuspendLayout();
             // 
@@ -46,31 +47,11 @@
             dgvDatos.AllowUserToAddRows = false;
             dgvDatos.AllowUserToDeleteRows = false;
             dgvDatos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvDatos.Columns.AddRange(new DataGridViewColumn[] { Comidas, BebidasSinAlcohol, BebidasConAlcohol, Postres });
+            dgvDatos.Columns.AddRange(new DataGridViewColumn[] { Mozos, Comidas, BebidasSinAlcohol, BebidasConAlcohol, Postres });
             dgvDatos.Location = new Point(12, 24);
             dgvDatos.Name = "dgvDatos";
             dgvDatos.Size = new Size(443, 172);
             dgvDatos.TabIndex = 0;
-            // 
-            // Comidas
-            // 
-            Comidas.HeaderText = "Comidas";
-            Comidas.Name = "Comidas";
-            // 
-            // BebidasSinAlcohol
-            // 
-            BebidasSinAlcohol.HeaderText = "Bebidas sin alcohol";
-            BebidasSinAlcohol.Name = "BebidasSinAlcohol";
-            // 
-            // BebidasConAlcohol
-            // 
-            BebidasConAlcohol.HeaderText = "Bebidas con alcohol";
-            BebidasConAlcohol.Name = "BebidasConAlcohol";
-            // 
-            // Postres
-            // 
-            Postres.HeaderText = "Postres";
-            Postres.Name = "Postres";
             // 
             // btnValidar
             // 
@@ -110,6 +91,32 @@
             txtResultados.Size = new Size(443, 150);
             txtResultados.TabIndex = 4;
             // 
+            // Mozos
+            // 
+            Mozos.HeaderText = "Mozos";
+            Mozos.Name = "Mozos";
+            Mozos.ReadOnly = true;
+            // 
+            // Comidas
+            // 
+            Comidas.HeaderText = "Comidas";
+            Comidas.Name = "Comidas";
+            // 
+            // BebidasSinAlcohol
+            // 
+            BebidasSinAlcohol.HeaderText = "Bebidas sin alcohol";
+            BebidasSinAlcohol.Name = "BebidasSinAlcohol";
+            // 
+            // BebidasConAlcohol
+            // 
+            BebidasConAlcohol.HeaderText = "Bebidas con alcohol";
+            BebidasConAlcohol.Name = "BebidasConAlcohol";
+            // 
+            // Postres
+            // 
+            Postres.HeaderText = "Postres";
+            Postres.Name = "Postres";
+            // 
             // frmVentas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -134,13 +141,14 @@
         #endregion
 
         private DataGridView dgvDatos;
-        private DataGridViewTextBoxColumn Comidas;
-        private DataGridViewTextBoxColumn BebidasSinAlcohol;
-        private DataGridViewTextBoxColumn BebidasConAlcohol;
-        private DataGridViewTextBoxColumn Postres;
         private Button btnValidar;
         private Button btnMejorMozo;
         private Button btnTotal;
         private TextBox txtResultados;
+        private DataGridViewTextBoxColumn Mozos;
+        private DataGridViewTextBoxColumn Comidas;
+        private DataGridViewTextBoxColumn BebidasSinAlcohol;
+        private DataGridViewTextBoxColumn BebidasConAlcohol;
+        private DataGridViewTextBoxColumn Postres;
     }
 }

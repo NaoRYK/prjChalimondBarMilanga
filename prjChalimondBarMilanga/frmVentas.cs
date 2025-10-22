@@ -13,6 +13,8 @@ namespace prjChalimondBarMilanga
         float[,] valoresGrilla;
         private void frmVentas_Load(object sender, EventArgs e)
         {
+            dgvDatos.Columns[0].HeaderText = "Mozos";
+
             foreach (string mozo in mozos)
             {
                 dgvDatos.Rows.Add(mozo);
@@ -22,7 +24,7 @@ namespace prjChalimondBarMilanga
             btnTotal.Enabled = datosValidados;
         }
 
-        private void btnValidar_Click(object sender, EventArgs e)
+        private void Validar()
         {
             for (int i = 0; i < dgvDatos.Rows.Count; i++)
             {
@@ -53,6 +55,10 @@ namespace prjChalimondBarMilanga
             btnTotal.Enabled = datosValidados;
 
         }
+        private void btnValidar_Click(object sender, EventArgs e)
+        {
+            Validar();
+        }
 
         private void btnMejorMozo_Click(object sender, EventArgs e)
         {
@@ -62,6 +68,7 @@ namespace prjChalimondBarMilanga
                 return;
             }
 
+            Validar();
             float maxTotal = float.MinValue;
             string mejorMozo = "";
 
@@ -86,12 +93,14 @@ namespace prjChalimondBarMilanga
 
         private void btnTotal_Click(object sender, EventArgs e)
         {
+
+
             if (valoresGrilla == null)
             {
                 MessageBox.Show("Primero validá los datos con el botón 'Validar'.");
                 return;
             }
-
+            Validar();
             int cantCategorias = dgvDatos.Columns.Count - 1; // 
             float[] totalesPorCategoria = new float[cantCategorias];
             float totalGeneral = 0;
@@ -111,9 +120,9 @@ namespace prjChalimondBarMilanga
             StringBuilder sb = new StringBuilder();
             sb.AppendLine(" Totales por categoría:");
 
-            for (int k = 0; k < cantCategorias; k++)
+            for (int k = 1; k < cantCategorias; k++)
             {
-                sb.AppendLine($"Categoría {k + 1}: {totalesPorCategoria[k]:0.00}");
+                sb.AppendLine($"Categoría {dgvDatos.Columns[k].HeaderText}: {totalesPorCategoria[k]:0.00}");
             }
 
             sb.AppendLine();
